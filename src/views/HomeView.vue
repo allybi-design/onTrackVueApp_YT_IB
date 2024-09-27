@@ -4,7 +4,7 @@ import WelcomeItem from '@/components/WelcomeItem.vue';
 </script>
 
 <template>
-  <article>
+  <article class="prose lg:prose-xl">
     <Icon icon="mdi-light:home" style="font-size: 24px;" />
     <h1>Home page</h1>
     <WelcomeItem />
