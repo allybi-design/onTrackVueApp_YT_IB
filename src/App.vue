@@ -4,7 +4,10 @@ import {RouterView } from 'vue-router'
 </script>
 
 <template>
-  <RouterView />
+  <main>
+    <header class="text-9xl">THIS IS THE TiTle</header>
+    <RouterView />
+  </main>
 </template>
 
 <style scoped>
