@@ -2,7 +2,7 @@
   <main class="flex min-h-screen flex-col">
     <HeaderComp />
 
-    <RouterView class="container mx-auto flex flex-grow flex-col prose lg:prose-xl " />
+    <RouterView class="container mx-auto flex flex-grow flex-col drop-shadow-2xl prose lg:prose-xl " />
 
     <FooterComp />
   </main>

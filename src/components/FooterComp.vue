@@ -1,7 +1,7 @@
 <template>
   <footer class="sticky z-20 bottom-0 ">
-    <nav class="footer">
-      <ul class="flex justify-around text-3xl  bg-slate-300 mt-4 ">
+    <nav class="footer ">
+      <ul class="flex justify-around text-3xl border-t  border-black bg-slate-300 mt-4 ">
   
         <RouterLink v-for="route in routes" :key="route.name" :to="route.path" class="flex w-full justify-center items-center py-2 hover:bg-slate-200">
           <Icon :icon="route.icon" class="" />
