@@ -5,8 +5,7 @@
   </button>
 </template>
 
-<script setup>
-
+<script setup >
 
 const { isDisabled } = defineProps({
   isDisabled: Boolean

@@ -8,21 +8,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { timeLineItems } from '@/utils/timeline-items';
 
 import TimeLineItem from '@/components/TimeLineItem.vue';
-
-const timeLineItems = ref(generateTimeLineItems())
-
-function generateTimeLineItems() {
-  const timeLineItems = []
-
-  for (let hour = 0; hour < 24; hour++) {
-    timeLineItems.push({ hour })
-  }
-
-  return timeLineItems
-}
 
 
 </script>
