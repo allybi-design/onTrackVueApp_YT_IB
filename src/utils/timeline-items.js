@@ -7,14 +7,14 @@ export function initTimeLineItems() {
 }
 
 export function updateTimelineItem(timelineItem, fields) {
-  console.log(timelineItem, fields);
+  // console.log(timelineItem, fields);
   return Object.assign(timelineItem, fields);
 }
 
 function generateTimeLineItems() {
   return [...Array(24).keys()].map((hour) => ({
     hour,
-    selectedActivityId: Math.floor(Math.random() * 6),
+    selectedId: Math.floor(Math.random() * 6),
     activitySeconds: 0,
     isActive: false,
   }));

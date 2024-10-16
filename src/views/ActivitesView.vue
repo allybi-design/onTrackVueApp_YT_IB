@@ -1,28 +1,13 @@
 <template>
-  <div>
-    <h1>
-      ActivitesView
-    </h1>
-    <ul>
-      <li>
-        <div>
-          <BaseButton >
-            <Icon icon="mdi:trash-can-outline" height="1.1em" class="text-4xl " @click="emit('selectChanged', 0)" />
-          </BaseButton>
-          <span>Reading</span>
-        </div>
-        <div>
-         
-        </div>
-      </li>
+  <article>
+    <h1 class="text-3xl uppercase text-center mb-8">Activities</h1>
+    <ul class="border-b border-black">
+      <ActivitItem />
     </ul>
-
-  </div>
+  </article>
 </template>
 
 <script setup>
-import BaseButton from '@/components/BaseButton.vue';
+import ActivitItem from '@/components/ActivitItem.vue';
 
-
-import { Icon } from '@iconify/vue';
 </script>

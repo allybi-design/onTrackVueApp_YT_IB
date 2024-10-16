@@ -1,20 +1,21 @@
 <template>
   <li class="relative flex  gap-2 border-t border-x border-slate-800 bg-slate-300 py-3 px-4">
-    <span class="absolute rounded px-2 -top-4 left-1/2 -translate-x-1/2 font-mono text-xl text-white"
-      :class="currentHourHighLight">
-      {{ formatedHour }}
-    </span>
+    <TimeLineHour :hour="timeLineItem.hour" />
 
-    <BaseSelection :selectedActivityId="timeLineItem.selectedActivityId"
-      @isSelected="updateTimelineItem(timeLineItem, { selectedActivityId: $event })" />
+    <BaseSelect :selectedId="timeLineItem.selectedId" :options
+      @isSelected="updateTimelineItem(timeLineItem, { selectedId: $event })" />
 
   </li>
 </template>
 
 <script setup>
-// import { ref } from 'vue';
-import BaseSelection from '@/components/BaseSelection.vue';
+import { ref } from 'vue';
+
+import TimeLineHour from '@/components/TimeLineHour.vue';
+import BaseSelect from '@/components/BaseSelect.vue';
+
 import { updateTimelineItem } from '@/utils/timeline-items';
+import { activitiesOptions } from '@/utils/constants';
 
 const { timeLineItem } = defineProps({
   timeLineItem: {
@@ -23,8 +24,6 @@ const { timeLineItem } = defineProps({
   }
 });
 
-const currentHourHighLight = new Date().getHours() === timeLineItem.hour ? 'bg-purple-900' : 'bg-slate-500';
-
-const formatedHour = `${timeLineItem.hour.toString().padStart(2, 0)}:00`;
+const options = ref(activitiesOptions)
 
 </script>

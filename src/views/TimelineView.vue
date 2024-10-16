@@ -8,9 +8,8 @@
 </template>
 
 <script setup>
-import { timeLineItems } from '@/utils/timeline-items';
-
 import TimeLineItem from '@/components/TimeLineItem.vue';
 
+import { timeLineItems } from '@/utils/timeline-items';
 
 </script>
