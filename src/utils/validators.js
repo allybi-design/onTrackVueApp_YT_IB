@@ -1,12 +1,11 @@
 export function isSelectValueValid(value) {
-  // console.log("isNotEmptyString", isNotEmptyString(value));
-  // console.log("isNumberOrNull", isNumberOrNull(value));
   return isNotEmptyString(value) || isNumberOrNull(value);
 }
-
 export function isNull(value) {
-  // console.log("isNull", value === null);
   return value === null;
+}
+export function isActivityValid(value) {
+  return isString(value) && value.length > 0;
 }
 
 function isNotEmptyString(value) {

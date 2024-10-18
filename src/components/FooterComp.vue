@@ -4,7 +4,7 @@
       <ul class="flex justify-around text-3xl border-t  border-black bg-slate-300 mt-4 ">
   
         <RouterLink v-for="route in routes" :key="route.name" :to="route.path" class="flex w-full justify-center items-center py-2 hover:bg-slate-200">
-          <Icon :icon="route.icon" class="" />
+          <Icon :icon="route.icon" />
           <h3 class="pl-4">{{ route.name }}</h3>
         </RouterLink>
 

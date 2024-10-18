@@ -9,14 +9,15 @@
 </template>
 
 <script setup>
-// import { ref } from 'vue';
 import { RouterView } from 'vue-router'
 
 import HeaderComp from './components/HeaderComp.vue';
 import FooterComp from './components/FooterComp.vue';
 
-import { initTimeLineItems } from '@/utils/timeline-items';
+// import { initTimeLineItems } from '@/utils/timeline-items';
+import { useTimeLineStore } from '@/stores/timeLineStore'
+const timeLineStore = useTimeLineStore()
 
-initTimeLineItems();
+timeLineStore.initTimeLineItems()
 
 </script>

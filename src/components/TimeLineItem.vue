@@ -1,21 +1,23 @@
 <template>
-  <li class="relative flex  gap-2 border-t border-x border-slate-800 bg-slate-300 py-3 px-4">
-    <TimeLineHour :hour="timeLineItem.hour" />
+  <li class="relative flex flex-col gap-2 border-slate-800 bg-slate-300 py-3 px-4">
+    <div class="flex items-center gap-2">
+      <TimeLineHour :hour="timeLineItem.hour" />
 
-    <BaseSelect :selectedId="timeLineItem.selectedId" :options
-      @isSelected="updateTimelineItem(timeLineItem, { selectedId: $event })" />
-
+      <BaseSelect :selected="timeLineItem.selected" :options="activitiesOptions"
+        @isSelected="updateTimelineItems(timeLineItem, { selected: $event })" />
+    </div>
   </li>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { useActivitesStore } from '@/stores/activitesStore'
+import { useTimeLineStore } from '@/stores/timeLineStore';
 
 import TimeLineHour from '@/components/TimeLineHour.vue';
 import BaseSelect from '@/components/BaseSelect.vue';
 
-import { updateTimelineItem } from '@/utils/timeline-items';
-import { activitiesOptions } from '@/utils/constants';
+const { updateTimelineItems } = useTimeLineStore()
+const { activitiesOptions } = useActivitesStore()
 
 const { timeLineItem } = defineProps({
   timeLineItem: {
@@ -23,7 +25,5 @@ const { timeLineItem } = defineProps({
     required: true,
   }
 });
-
-const options = ref(activitiesOptions)
 
 </script>

@@ -1,11 +1,10 @@
 <template>
   <span :class="classes">
-    {{ time }}
+    {{ formatedHour(hour) }}
   </span>
 </template>
 
 <script setup>
-
 import { now, formatedHour } from '@/utils/time';
 
 const { hour } = defineProps({
@@ -20,7 +19,6 @@ const classes = [
   now.value.getHours() === hour ? 'bg-purple-900' : 'bg-slate-500'
 ];
 
-const time = formatedHour(hour)
 </script>
 
 <style lang="scss" scoped></style>

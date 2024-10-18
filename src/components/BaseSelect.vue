@@ -8,7 +8,7 @@
       @change="isSelected($event.target.value)">
 
       <option class=" border-1 border-black" v-for="{ value, label } in options" :key="value" :value
-        :selected="value === selectedId">
+        :selected="value === selected">
         {{ label }}
       </option>
 
@@ -25,9 +25,9 @@ import { normalizeSelectValue } from '@/utils/functions';
 
 import BaseButton from '@/components/BaseButton.vue';
 
-const { selectedId, options } = defineProps({
-  selectedId: {
-    type: Number,
+const { selected, options } = defineProps({
+  selected: {
+    type: Number || null,
     required: true,
   },
   options: {
