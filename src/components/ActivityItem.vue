@@ -1,15 +1,14 @@
 <template>
   <li class="flex flex-col gap-2 border-slate-800 bg-slate-300 py-3 px-4">
-    <div class="flex  items-center gap-2">
-      <BaseButton>
-        <Icon icon="mdi:trash-can-outline" height="1.1em" class="text-4xl " />
+    <div class="flex items-center gap-4">
+      <BaseButton type="danger">
+        <Icon icon="mdi:trash-can-outline" height="1.4em" class="text-2xl " />
       </BaseButton>
       <span class="truncate text-2xl">{{ label }}</span>
     </div>
 
-    <div class="flex items-center gap-2">
-      <BaseSelect :options="timeOptions" :selected="secondsToComplete"
-        @isSelected="secondsToComplete = $event" />
+    <div class="flex items-center gap-4">
+      <BaseSelect :options="timeOptions" :selected="secondsToComplete" @isSelected="secondsToComplete = $event" />
     </div>
   </li>
 

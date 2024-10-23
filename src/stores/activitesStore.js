@@ -3,6 +3,7 @@ import { defineStore } from "pinia";
 export const useActivitesStore = defineStore({
   id: "activites",
   state: () => ({
+    // count: 0,
     activitiesOptions: [
       { value: 0, label: "Rest" },
       { value: 1, label: "Work" },
@@ -13,15 +14,25 @@ export const useActivitesStore = defineStore({
     ],
   }),
 
-  getters: {
-     },
-
   actions: {
-    doubleCount() {
-      this.activities * 2;
-    },
-    increment() {
-      this.activities++;
-    },
+    // //! Example 1: 
+    // doubleCount() {
+    //   this.count * 2;
+    // },
+    // //! exaample 2:
+    // increment(payload) {
+    //   this.count = this.count + payload;
+    // },
+  },
+
+  getters: {
+    // //! Example 1: 
+    // getDoubleCount:(state) =>{
+    //   return state.count * 2;
+    // },
+    // //!  exaample 2:
+    // getCount: (state) => {
+    //   return state.count
+    // }
   },
 });

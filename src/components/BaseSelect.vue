@@ -1,6 +1,6 @@
 <template>
-  <BaseButton :isDisabled @click="isSelected(0)">
-    <Icon icon="mdi:close-box" height="1.1em" class="text-4xl " />
+  <BaseButton type="neutral" :isDisabled @click="isSelected(0)">
+    <Icon icon="material-symbols:close" height="1.1em" class="text-3xl p-0" />
   </BaseButton>
 
   <div class="flex gap-4 w-full font-mono">
@@ -25,9 +25,11 @@ import { normalizeSelectValue } from '@/utils/functions';
 
 import BaseButton from '@/components/BaseButton.vue';
 
+const isDisabled = ref(false);
+
 const { selected, options } = defineProps({
   selected: {
-    type: Number || null,
+    type: Number,
     required: true,
   },
   options: {
@@ -44,6 +46,5 @@ function isSelected(value) {
   emit('isSelected', normalizeSelectValue(value))
 }
 
-const isDisabled = ref(false);
 
 </script>
